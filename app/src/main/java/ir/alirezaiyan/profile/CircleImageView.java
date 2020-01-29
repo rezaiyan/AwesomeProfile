@@ -64,7 +64,6 @@ public class CircleImageView extends AppCompatImageView {
 
     private boolean mReady;
     private boolean mSetupPending;
-    private boolean mDisableCircularTransformation;
     private float cornerRadius;
 
     public CircleImageView(Context context) {
@@ -139,10 +138,6 @@ public class CircleImageView extends AppCompatImageView {
     @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(Canvas canvas) {
-        if (mDisableCircularTransformation) {
-            super.onDraw(canvas);
-            return;
-        }
 
         if (mBitmap == null) {
             return;
@@ -276,11 +271,7 @@ public class CircleImageView extends AppCompatImageView {
     }
 
     private void initializeBitmap() {
-        if (mDisableCircularTransformation) {
-            mBitmap = null;
-        } else {
-            mBitmap = getBitmapFromDrawable(getDrawable());
-        }
+        mBitmap = getBitmapFromDrawable(getDrawable());
         setup();
     }
 
