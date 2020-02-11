@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="./art/preview.png" height="400" width="220"/>
+  <img src="./art/preview.gif" height="400" width="220"/>
 </p>
 
 License
