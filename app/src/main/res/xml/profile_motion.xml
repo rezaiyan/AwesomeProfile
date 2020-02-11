@@ -13,12 +13,10 @@
 
         <KeyFrameSet>
 
-
         </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
-
 
         <Constraint
             android:id="@+id/recyclerview"
@@ -26,13 +24,8 @@
             android:layout_height="wrap_content"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
+            android:translationY="-25dp"
             motion:layout_constraintTop_toBottomOf="@+id/avatarImageView">
-
-
-            <CustomAttribute
-                motion:attributeName="paddingTop"
-                motion:customDimension="50dp" />
-
 
         </Constraint>
 
@@ -47,8 +40,6 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent">
-
-            <PropertySet motion:visibilityMode="ignore" />
 
             <CustomAttribute
                 motion:attributeName="CornerRadius"
@@ -65,15 +56,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             motion:layout_constraintEnd_toEndOf="parent"
+            android:translationY="0dp"
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="250dp"
             motion:layout_constraintTop_toTopOf="parent">
-
-
-
-            <CustomAttribute
-                motion:attributeName="paddingTop"
-                motion:customDimension="250dp" />
 
         </Constraint>
 
@@ -88,7 +74,6 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="@id/recyclerview"
             motion:layout_constraintBottom_toTopOf="@id/recyclerview">
-            <PropertySet motion:visibilityMode="ignore" />
 
             <CustomAttribute
                 motion:attributeName="CornerRadius"

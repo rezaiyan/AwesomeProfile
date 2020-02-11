@@ -8,9 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <declare-styleable name="CircleImageView">
-        <attr name="civ_radius" format="dimension" />
-        <attr name="civ_circle_background_color" format="color" />
+    <declare-styleable name="AvatarView">
+        <attr name="av_radius" format="dimension" />
+        <attr name="av_circle_background_color" format="color" />
     </declare-styleable>
 
 </resources>

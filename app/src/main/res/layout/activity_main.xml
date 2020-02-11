@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".MainActivity"
+    android:fitsSystemWindows="true"
     app:layoutDescription="@xml/profile_motion"
+    tools:context=".MainActivity"
     tools:motionProgress="0.0"
     tools:showPaths="true"
     tools:visibility="visible">
@@ -19,14 +20,37 @@
         android:layout_height="0dp"
         android:background="@color/colorPrimaryDark"
         android:clipToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/avatarImageView"
         tools:itemCount="50"
-        tools:listitem="@layout/item" />
+        tools:listitem="@layout/item1" />
 
-    <ir.alirezaiyan.profile.CImageView
+    <ImageView
+        android:id="@+id/newrelease"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:src="@drawable/ic_baseline_new_releases_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:src="@drawable/ic_baseline_more_horiz_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ir.alirezaiyan.profile.AvatarView
         android:id="@+id/avatarImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
