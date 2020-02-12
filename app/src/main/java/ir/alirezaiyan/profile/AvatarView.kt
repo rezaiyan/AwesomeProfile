@@ -13,6 +13,8 @@ class AvatarView : AppCompatImageView {
     private var mBitmap: Bitmap? = null
     private var cornerRadius = 50f
     private val mBitmapPaint = Paint()
+    private val mMatrix = Matrix()
+    private val mRectF = RectF()
 
     constructor(context: Context?) : super(context) {
         init()
@@ -48,8 +50,12 @@ class AvatarView : AppCompatImageView {
         if (mBitmap == null) {
             return
         }
+        mBitmapPaint.shader = BitmapShader(
+            resizeBitmap(width, height), Shader.TileMode.CLAMP, Shader.TileMode.CLAMP
+        )
+        mRectF.set(0F, 0F, width.toFloat(), height.toFloat())
         canvas.drawRoundRect(
-            RectF(0F, 0F, width.toFloat(), height.toFloat()),
+            mRectF,
             cornerRadius,
             cornerRadius,
             mBitmapPaint
@@ -89,5 +95,16 @@ class AvatarView : AppCompatImageView {
             e.printStackTrace()
             null
         }
+    }
+
+    private fun resizeBitmap(width: Int, height: Int): Bitmap {
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        mBitmap?.let {
+            mMatrix.setScale(width.toFloat() / it.width, height.toFloat() / it.height)
+            canvas.drawBitmap(it, mMatrix, null)
+        }
+
+        return bitmap
     }
 }
